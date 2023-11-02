@@ -1,3 +1,5 @@
+/* General */
+
 body {
     padding: 2em 2em;
     color: white;
@@ -8,18 +10,69 @@ body {
 
 }
 
+/* Header */
 header h3 {
     padding: 0 3em;
 }
 
-.body {
+/* Song Generator General */
+
+.songGenerator {
     margin-top: 2em;
     display: inline-flex;
     flex-wrap: wrap;
-    min-width: 60%;
+    min-width: 80%;
+    min-height: 20em;
     justify-content: space-between;
+    line-height: 2em;
 }
 
-.body h2{
+.songGenerator h2{
     color: lightskyblue;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: white;
+}
+
+.songGenerator div {
+    min-width: 40%;
+    min-height: 95%;
+}
+
+/* Song Generator Buttons */
+
+#optionA {
+    align-content: space-between;
+}
+
+#mood {
+    min-width: 50%;
+    min-height: 8%;
+    font-size: 0.70em;
+    border: solid darkcyan 0.30em;
+    border-radius: 5em;
+    text-align: center;
+}
+
+#song {
+    margin-top: 1em;
+    min-width: 55%;
+    min-height: 8%;
+    font-size: 0.70em;
+    border: solid darkcyan 0.30em;
+    border-radius: 5em;
+    text-align: center;
+}
+
+#optionB button {
+    min-width: 40%;
+    min-height: 15%;
+    border: solid darkcyan 0.30em;
+    border-radius: 5em;
+}
+
+.songOutcome {
+    margin-top: 5%;
+    color: lightgreen;
+    text-decoration: underline;
 }

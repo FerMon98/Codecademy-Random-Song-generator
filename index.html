@@ -14,19 +14,60 @@
         <h3>In this project you have 2 options where you can choose from the drop down the mood you are in and what song you would like to listen from our pick OR we can randomly generate one for you :)</h3>
     </header>
 
-    <div class="body">
-        <div class="optionA">
-            <h2>Choose your Mood and Song</h2>
-            <button>Mood</button>
-            <button>Song</button>
-        </div>
+    <section class="songGenerator">
+        <form id="optionA">
+            <h2>Do it your way.</h2>
+            <label for="mood">Choose your mood:</label><br>
+            <select name="mood" id="mood">
+                <option value="pick">Pick one</option>
+                <option value="balads">Balads</option>
+                <option value="sad">Sad</option>
+                <option value="happy">Happy</option>
+                <option value="party">Party</option>
+                <option value="rocknroll">Rock n Roll</option>
+            </select>
+            <br><br>
+            <label for="song">Choose your song:</label><br>
+            <select name="song" id="song">
+                <option value="pick">Pick one</option>
+                <option value=0>On the radio - Donna Summer</option>
+                <option value=1>Como antes – Llane </option>
+                <option value=2>Every Breath you take - The Police</option>
+                <option value=3>I Have Nothing - Whitney Houston</option>
+                <option value=4>Careless Whisper - George Michael</option>
+                <option value=5>She Used To Be Mine - Sara Bareilles</option>
+                <option value=6>Tu tanta falta de querer - Mon Laferte</option>
+                <option value=7>Every Time We Say Goodbye - Betty Carter</option>
+                <option value=8>Missed - Ella Henderson</option>
+                <option value=9>Chandelier - Nossa Toca, Julian Gray</option>
+                <option value=10>Presumida - Eddy Herrera</option>
+                <option value=11>All About That Bass - Meghan Trainor</option>
+                <option value=12>So What – Pink</option>
+                <option value=13>Sway - Michael Bubble</option>
+                <option value=14>Me Encantas - Pedro Fernandez</option>
+                <option value=15>I Will Survive - Gloria Gaynor</option>
+                <option value=16>Hot Stuff - Donna Summer</option>
+                <option value=17>Pa Romperla - Bad Bunny & Don Omar</option>
+                <option value=18>The Nights – Avicii</option>
+                <option value=19>Suavemente - Elvis Crespo</option>
+                <option value=20>Fat Bottomed Girls – Queen</option>
+                <option value=21>Stayin Alive - Bee Gees</option>
+                <option value=22>Howlin for You - The Blak Keys</option>
+                <option value=23>Welcome to the Black Parade - My Chemical Romance</option>
+                <option value=24>November Rain - Guns n Roses</option>
+            </select>
+        </form>
 
-        <div class="optionB">
+        <div id="optionB">
             <h2>Let us pick for you!</h2>
-            <button>Get Song</button>
+            <button class="randomSong">Get Song</button>
         </div>
-    </div>
-</body>
+    </section>
+
+    <section class="songOutcome">
+        <h2>Here's the link to your song:</h2>
+    </section>
+</section>
 
 <footer>
     <script src="main.js"></script>
