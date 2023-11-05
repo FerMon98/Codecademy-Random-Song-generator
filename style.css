@@ -65,14 +65,33 @@ header h3 {
 }
 
 #optionB button {
+    font-size: 1em;
+    margin-top: 5%;
     min-width: 40%;
     min-height: 15%;
     border: solid darkcyan 0.30em;
     border-radius: 5em;
 }
 
-.songOutcome {
-    margin-top: 5%;
+#optionB button:hover {
+    color: green;
+    cursor: pointer;
+    min-width: 35%;
+    min-height: 12%;
+}
+
+#showSongResult h2{
+    margin-top: 1%;
     color: lightgreen;
     text-decoration: underline;
+}
+
+#showSongResult a {
+    color: white;
+    text-overflow:ellipsis ;
+}
+
+#showSongResult a:hover{
+    color: lightblue;
+    cursor: grab;
 }

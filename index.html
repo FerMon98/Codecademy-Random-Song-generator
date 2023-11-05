@@ -18,10 +18,10 @@
         <form id="optionA">
             <h2>Do it your way.</h2>
             <label for="mood">Choose your mood:</label><br>
-            <select name="mood" id="mood">
+            <select name="mood" id="mood" onchange="showSongs()">
                 <option value="pick">Pick one</option>
                 <option value="ballads" id="ballads">Ballads</option>
-                <option value="sad" id=sad">Sad</option>
+                <option value="sad" id="sad">Sad</option>
                 <option value="happy" id="happy">Happy</option>
                 <option value="party" id="party">Party</option>
                 <option value="rocknroll" id="rocknroll">Rock n Roll</option>
@@ -30,7 +30,7 @@
             <label for="song">Choose your song:</label><br>
             <select name="song" id="song">
                 <option value="pick">Pick one</option>
-                <option class="song" value=0 hidden >On the radio - Donna Summer</option>
+                <option class="song" value="donna" hidden >On the radio - Donna Summer</option>
                 <option class="song" value=1 hidden>Como antes – Llane </option>
                 <option class="song" value=2 hidden>Every Breath you take - The Police</option>
                 <option class="song" value=3 hidden>I Have Nothing - Whitney Houston</option>
@@ -60,16 +60,21 @@
 
         <div id="optionB">
             <h2>Let us pick for you!</h2>
-            <button class="randomSong">Get Song</button>
+            <button type="button" id="randomSong">Get Song</button>
         </div>
     </section>
 
-    <section class="songOutcome">
+    <section id="showSongResult">
         <h2>Here's the link to your song:</h2>
+        <div id="songOutcome">
+            <p>You'll see your link here</p>
+        </div>
     </section>
-</section>
+
+    <script src="main.js"></script>
+</body>
 
 <footer>
-    <script src="main.js"></script>
 </footer>
+
 </html>
