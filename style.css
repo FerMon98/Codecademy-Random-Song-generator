@@ -1,6 +1,14 @@
 /* General */
+@font-face {
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/lora/v32/0QI6MX1D_JOuGQbT0gvTJPa787weuxJBkq0.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
 
 body {
+    font-family: 'Lora';
     padding: 2em 2em;
     color: white;
     background-color: black;
@@ -15,7 +23,21 @@ header h3 {
     padding: 0 3em;
 }
 
-/* Song Generator General */
+/*Header media query */
+
+@media only screen and (max-width: 690px) and (min-width: 250px) {
+    header h1{
+        font-size: 1.2em;
+    }
+
+    header h2{
+        font-size: 0.9em;
+    }
+
+    header h3{
+        font-size: 0.75em;
+    }
+}
 
 .songGenerator {
     margin-top: 2em;
@@ -36,19 +58,35 @@ header h3 {
 
 .songGenerator div {
     min-width: 40%;
-    min-height: 95%;
+    min-height: 100%;
+}
+
+/*Media query for buttons section*/
+
+@media only screen and (max-width: 1050px) and (min-width: 250px){
+    .songGenerator {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        min-height: 25em;
+        padding: 0;
+    }
+
 }
 
 /* Song Generator Buttons */
 
+/*OptionA Custom */
 #optionA {
     align-content: space-between;
 }
 
 #mood {
+    line-height: 2em;
     min-width: 50%;
-    min-height: 8%;
-    font-size: 0.70em;
+    min-height: 9%;
+    font-size: 0.85em;
     border: solid darkcyan 0.30em;
     border-radius: 5em;
     text-align: center;
@@ -58,11 +96,24 @@ header h3 {
     margin-top: 1em;
     min-width: 55%;
     min-height: 8%;
-    font-size: 0.70em;
+    font-size: 0.82em;
     border: solid darkcyan 0.30em;
     border-radius: 5em;
     text-align: center;
 }
+/*Media query for button A*/
+
+@media only screen and (max-width: 700px) and (min-width: 250px) {
+    #optionA {
+        font-size: 0.75em;
+    }
+
+    #song{
+        min-height: 80%;
+    }
+}
+
+/*OptionB Custom */
 
 #optionB button {
     font-size: 1em;
@@ -80,6 +131,15 @@ header h3 {
     min-height: 12%;
 }
 
+/*Media query for button B*/
+@media only screen and (max-width: 700px) and (min-width: 250px) {
+    #optionB {
+        font-size: 0.80em;
+    }
+}
+
+/*Showing Outcome of choice */
+
 #showSongResult h2{
     margin-top: 1%;
     color: lightgreen;
@@ -94,4 +154,16 @@ header h3 {
 #showSongResult a:hover{
     color: lightblue;
     cursor: grab;
+}
+
+/*Media query for Showing Outcome */
+
+@media only screen and (max-width: 1050px) and (min-width: 250px) {
+    #showSongResult h2{
+        font-size: 1em;
+    }
+
+    #showSongResult a{
+        font-size: 0.80em;
+    }
 }
