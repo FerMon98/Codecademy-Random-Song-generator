@@ -12,38 +12,103 @@ const partySongs = ['I Will Survive - Gloria Gaynor', 'Hot Stuff - Donna Summer'
 
 const rocknrollSongs = ['Fat Bottomed Girls - Queen', 'Stayin Alive - Bee Gees', 'Howlin for You - The Blak Keys', 'Welcome to The Black Parade - My Chemical Romance', 'November Rain - Guns n Roses'];
 
-
 /* Code for Displaying right songs for every mood */
 
-var songDropDown = document.getElementById("song");
 var moodDropDown = document.getElementById("mood");
+var songDropDown = document.getElementById("song");
 var songLink = document.getElementById("songOutcome");
 var randomSong = document.getElementById("randomSong");
 
-var selectedSong = songDropDown.value;
-var songOptions = document.getElementsByClassName("song");
 var selected = moodDropDown.value;
+var selectedSong = songDropDown.value;
 
 moodDropDown.onchange = function(){
     selected = moodDropDown.value;
-    showSongs();
+    addDropdownOptions(songDropDown, selected);
 };
 
 songDropDown.onchange = function(){
     selectedSong = songDropDown.value;
-    showSelectedLinks();
+    showSelectedLinks(selected);
 };
 
 randomSong.onclick = function() {
     getRandomSong();
 };
 
+
+function addDropdownOptions(dropDown, selectedMood) {
+    dropDown.innerHTML = '';
+    let option = document.createElement('option');
+    option.innerText = 'Pick One';
+    option.value = 'Pick One';
+    dropDown.appendChild(option)
+
+
+    currentSongs = [];
+    if(selectedMood === "0") {
+        currentSongs = balladSongs;
+    }
+    else if(selectedMood === "1") {
+        currentSongs = sadSongs;
+    }
+    else if(selectedMood === "2") {
+        currentSongs = happySongs;
+    }
+    else if(selectedMood === "3") {
+        currentSongs = partySongs;
+    }
+    else {
+        currentSongs = rocknrollSongs;
+    }
+
+    for(var index = 0; index < 5; index++)
+    {
+        songOptions = document.createElement('option');
+        songOptions.innerText = currentSongs[index];
+        songOptions.className = 'song';
+        songOptions.value = index;
+        dropDown.appendChild(songOptions);   
+    }
+    
+}
+
+function showSelectedLinks(selectedValue) {
+
+    index = parseInt(selectedValue) * 5;
+    songIndex = parseInt(selectedSong) + index;
+
+    let aTag = document.createElement('a');
+    aTag.setAttribute('target', '_blank');
+    aTag.innerHTML = songs[songIndex]; 
+    aTag.setAttribute('href', songs[songIndex]);
+
+    songLink.innerHTML = '';
+    songLink.appendChild(aTag);
+}
+
+function getRandomSong() {
+    let getMood = Math.floor(Math.random() * songs.length);
+    
+    let aTag = document.createElement('a');
+    aTag.setAttribute('target', '_blank');
+    aTag.innerHTML = 'Random Song: ' + songs[getMood];
+    aTag.href = songs[getMood];
+    
+    songLink.innerHTML = '';
+    songLink.appendChild(aTag);
+}
+
+/* var songOptions = document.getElementsByClassName("song");
+var option = '<option class="song" value='+ index +'>' + currentSongs[index] +'</option>';
+dropDown.appendChild('<option value="pick">Pick one</option>');
+
 function showSongs() {
     for(index = 0; index < songOptions.length; index++)
     {
         songOptions[index].setAttribute('hidden', 'hidden');
     }
-    
+ 
     if (selected === "ballads")
     {
         songOptions[0].removeAttribute('hidden');
@@ -89,28 +154,8 @@ function showSongs() {
     }
 }
 
-function showSelectedLinks () {
-    let aTag = document.createElement('a');
-    aTag.setAttribute('target', '_blank');
-    aTag.innerHTML = songs[selectedSong]; 
-    aTag.setAttribute('href', songs[selectedSong]);
-
-    songLink.innerHTML = '';
-    songLink.appendChild(aTag);
-}
-
 function getRandomSong() {
-    let getMood = Math.floor(Math.random() * songs.length);
-    
-    let aTag = document.createElement('a');
-    aTag.setAttribute('target', '_blank');
-    aTag.innerHTML = 'Random Song: ' + songs[getMood];
-    aTag.href = songs[getMood];
-    
-    songLink.innerHTML = '';
-    songLink.appendChild(aTag);
-
-    /*let getSong;
+       let getSong;
     
     if (getMood === 0) {
         getSong = (Math.floor(Math.random() * balladSongs.length));
@@ -134,6 +179,5 @@ function getRandomSong() {
     aTag.href = songs[getMood];
     
     songLink.innerHTML = '';
-    songLink.appendChild(aTag);*/
-
-}
+    songLink.appendChild(aTag);
+}*/
